@@ -2,16 +2,16 @@ HALLUCINATION DETECTION & CORRECTION - EVALUATION REPORT
 ================================================================================
 
 Dataset Size: 15
-Accuracy: 0.867
-Precision: 0.800
-Recall: 1.000
-F1-Score: 0.889
+Accuracy: 0.667
+Precision: 1.000
+Recall: 0.375
+F1-Score: 0.545
 
 Confusion Matrix:
-[[5 2]
- [0 8]]
+[[7 0]
+ [5 3]]
 
-True Positives: 8
-True Negatives: 5
-False Positives: 2
-False Negatives: 0
+True Positives: 3
+True Negatives: 7
+False Positives: 0
+False Negatives: 5

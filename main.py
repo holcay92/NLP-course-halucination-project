@@ -6,6 +6,7 @@ Description: Comprehensive system for detecting and correcting hallucinations in
 
 import numpy as np
 import json
+import re
 from transformers import pipeline, AutoTokenizer, AutoModelForSequenceClassification
 import torch
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
@@ -54,6 +55,13 @@ domain_classifier = pipeline("text-classification", model="cross-encoder/ms-marc
 
 class HallucinationDetector:
     """Multi-method hallucination detection system"""
+    
+    # Risky phrases that indicate overconfidence/hallucination
+    RISK_PHRASES = [
+        "always", "never", "guaranteed", "completely safe",
+        "no risk", "all patients", "100%", "no side effects",
+        "absolutely", "impossible", "certain", "definitely safe"
+    ]
     
     def __init__(self, nli_model, similarity_model, domain_classifier):
         self.nli_model = nli_model
@@ -104,18 +112,71 @@ class HallucinationDetector:
         is_hallucination = 1 if score < 0.3 else 0
         return is_hallucination, score
     
-    def ensemble_detection(self, evidence, output, weights=[0.5, 0.3, 0.2]):
-        """Ensemble method combining all three detectors"""
+    def detect_via_uncertainty(self, output):
+        """Method 4: Uncertainty-based detection - flags overconfident/absolute statements"""
+        score = 0
+        text_lower = output.lower()
+        for phrase in self.RISK_PHRASES:
+            if re.search(rf"\b{phrase}\b", text_lower):
+                score += 1
+        
+        print(f"    Uncertainty: {score} risky phrases found")
+        
+        # Any risky phrase is suspicious in medical context
+        is_hallucination = 1 if score > 0 else 0
+        confidence = min(score / 3.0, 1.0)  # Normalize to 0-1
+        return is_hallucination, confidence
+    
+    def detect_via_medical_rules(self, query, output):
+        """Method 5: Rule-based medical safety checks"""
+        q = query.lower()
+        r = output.lower()
+        violations = []
+        
+        # Paracetamol dosage rule (max 4000mg, not 6000mg)
+        if "paracetamol" in q or "acetaminophen" in q:
+            if any(dose in r for dose in ["6000", "5000", "8000"]):
+                violations.append("excessive_paracetamol_dose")
+        
+        # Antibiotics for viruses rule
+        if "antibiotic" in q and "viral" in q:
+            if "effective" in r or "treat" in r and "not" not in r:
+                violations.append("antibiotics_for_virus")
+        
+        # Pregnancy medication safety
+        if "pregnancy" in q or "pregnant" in q:
+            if "ibuprofen" in r and "third trimester" in q and "safe" in r:
+                violations.append("nsaid_third_trimester")
+            if "completely safe" in r or "no risk" in r:
+                violations.append("pregnancy_overconfidence")
+        
+        # Aspirin and children (Reye's syndrome risk)
+        if ("child" in q or "pediatric" in q) and "aspirin" in r:
+            if "safe" in r and "reye" not in r:
+                violations.append("aspirin_children_risk")
+        
+        print(f"    Medical Rules: {len(violations)} violations - {violations if violations else 'none'}")
+        
+        is_hallucination = 1 if violations else 0
+        confidence = min(len(violations) / 2.0, 1.0)
+        return is_hallucination, confidence
+    
+    def ensemble_detection(self, query, evidence, output, weights=[0.3, 0.2, 0.15, 0.2, 0.15]):
+        """Ensemble method combining all five detectors"""
         print(f"  Detection scores:")
         pred1, score1 = self.detect_via_entailment(evidence, output)
         pred2, score2 = self.detect_via_similarity(evidence, output)
         pred3, score3 = self.detect_via_domain_classifier(evidence, output)
+        pred4, score4 = self.detect_via_uncertainty(output)
+        pred5, score5 = self.detect_via_medical_rules(query, output)
         
         # Weighted voting - sum weights of methods that predict hallucination
         hallucination_weight = 0
         hallucination_weight += weights[0] if pred1 == 1 else 0
         hallucination_weight += weights[1] if pred2 == 1 else 0
         hallucination_weight += weights[2] if pred3 == 1 else 0
+        hallucination_weight += weights[3] if pred4 == 1 else 0
+        hallucination_weight += weights[4] if pred5 == 1 else 0
         
         # Decision: if majority of weighted votes say hallucination
         final_pred = 1 if hallucination_weight >= 0.4 else 0
@@ -126,7 +187,9 @@ class HallucinationDetector:
         return final_pred, confidence, {
             'entailment': (pred1, score1),
             'similarity': (pred2, score2),
-            'domain': (pred3, score3)
+            'domain': (pred3, score3),
+            'uncertainty': (pred4, score4),
+            'medical_rules': (pred5, score5)
         }
 
 detector = HallucinationDetector(nli_model, similarity_model, domain_classifier)
@@ -217,6 +280,7 @@ for item in medical_dataset:
     print(f"\nCase {item['id']}: {item['query'][:60]}...")
     # Run ensemble detection
     prediction, confidence, method_scores = detector.ensemble_detection(
+        item['query'],
         item['evidence'], 
         item['llm_output']
     )
