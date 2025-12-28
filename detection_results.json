@@ -1,0 +1,645 @@
+{
+  "metrics": {
+    "accuracy": 0.8666666666666667,
+    "precision": 0.8,
+    "recall": 1.0,
+    "f1_score": 0.8888888888888888,
+    "confusion_matrix": [
+      [
+        5,
+        2
+      ],
+      [
+        0,
+        8
+      ]
+    ]
+  },
+  "results": [
+    {
+      "id": 1,
+      "query": "What is the standard treatment for Type 1 Diabetes?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.8115573525428772
+        ],
+        "similarity": [
+          0,
+          0.8728628158569336
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": null,
+      "category": "Treatment"
+    },
+    {
+      "id": 2,
+      "query": "What are the symptoms of hypertension?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.5256352424621582
+        ],
+        "similarity": [
+          0,
+          0.7258128523826599
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 3,
+      "query": "How is COVID-19 transmitted?",
+      "prediction": 1,
+      "actual": 0,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9923337697982788
+        ],
+        "similarity": [
+          0,
+          0.6550567150115967
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: SARS-CoV-2 transmits via respiratory droplets and aerosols from infected individuals, and through contact with contaminated surfaces (fomites).",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "COVID-19 spreads primarily through respiratory droplets when an infected person coughs, sneezes, or talks. It can also spread by touching contaminated surfaces.",
+          "applied_rules": [],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "SARS-CoV-2 transmits via respiratory droplets and aerosols from infected individuals, and through contact with contaminated surfaces (fomites).",
+          "recommendation": "Consult healthcare provider regarding: How is COVID-19 transmitted?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "COVID-19 spreads primarily through respiratory droplets when an infected person coughs, sneezes, or talks. It can also spread by touching contaminated surfaces.",
+          "evidence_provided": "SARS-CoV-2 transmits via respiratory droplets and aerosols from infected individuals, and through contact with contaminated surfaces (fomites).",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Transmission"
+    },
+    {
+      "id": 4,
+      "query": "What is the normal range for adult heart rate?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.997331976890564
+        ],
+        "similarity": [
+          0,
+          0.9218075275421143
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": null,
+      "category": "Vital Signs"
+    },
+    {
+      "id": 5,
+      "query": "What is the recommended dosage of aspirin for heart attack prevention?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.6219296455383301
+        ],
+        "similarity": [
+          0,
+          0.9388880729675293
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": null,
+      "category": "Medication"
+    },
+    {
+      "id": 13,
+      "query": "What are the early signs of Alzheimer's disease?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.9960547685623169
+        ],
+        "similarity": [
+          0,
+          0.6731378436088562
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 15,
+      "query": "What is the purpose of chemotherapy?",
+      "prediction": 1,
+      "actual": 0,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.6878657341003418
+        ],
+        "similarity": [
+          0,
+          0.8822376728057861
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Chemotherapy employs cytotoxic agents to destroy rapidly dividing cancer cells. It may be used for cure, risk reduction (adjuvant), or symptom management (palliative).",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Chemotherapy uses powerful drugs to kill cancer cells or slow their growth. It can be curative, adjuvant, or psomeiative depending on cancer type and stage.",
+          "applied_rules": [
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Chemotherapy employs cytotoxic agents to destroy rapidly dividing cancer cells. It may be used for cure, risk reduction (adjuvant), or symptom management (palliative).",
+          "recommendation": "Consult healthcare provider regarding: What is the purpose of chemotherapy?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Chemotherapy uses powerful drugs to kill cancer cells or slow their growth. It can be curative, adjuvant, or palliative depending on cancer type and stage.",
+          "evidence_provided": "Chemotherapy employs cytotoxic agents to destroy rapidly dividing cancer cells. It may be used for cure, risk reduction (adjuvant), or symptom management (palliative).",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Treatment"
+    },
+    {
+      "id": 6,
+      "query": "Can I cure Stage 4 lung cancer with Vitamin C?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9993621706962585
+        ],
+        "similarity": [
+          0,
+          0.7941386699676514
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: There is no clinical evidence that Vitamin C cures stage 4 lung cancer. While some studies examine Vitamin C as adjunct therapy, it is not a cure.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, high-dose intravenous Vitamin C injections have been clinicsomey proven to treatment options include terminal stage 4 lung cancer in most patients.",
+          "applied_rules": [
+            "Replaced 'cure' with 'treatment options include'",
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "There is no clinical evidence that Vitamin C cures stage 4 lung cancer. While some studies examine Vitamin C as adjunct therapy, it is not a cure.",
+          "recommendation": "Consult healthcare provider regarding: Can I cure Stage 4 lung cancer with Vitamin C?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, high-dose intravenous Vitamin C injections have been clinically proven to cure terminal stage 4 lung cancer in most patients.",
+          "evidence_provided": "There is no clinical evidence that Vitamin C cures stage 4 lung cancer. While some studies examine Vitamin C as adjunct therapy, it is not a cure.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "HIGH"
+        }
+      },
+      "category": "Treatment"
+    },
+    {
+      "id": 7,
+      "query": "Is it safe to stop taking blood pressure medication suddenly?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9994258880615234
+        ],
+        "similarity": [
+          0,
+          0.6513335704803467
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Abruptly stopping antihypertensive medications can cause rebound hypertension and serious cardiovascular events. Medication changes require medical supervision.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, it's perfectly safe to stop blood pressure medications immediately once you feel better. Your body will natursomey regulate blood pressure.",
+          "applied_rules": [
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Abruptly stopping antihypertensive medications can cause rebound hypertension and serious cardiovascular events. Medication changes require medical supervision.",
+          "recommendation": "Consult healthcare provider regarding: Is it safe to stop taking blood pressure medication suddenly?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, it's perfectly safe to stop blood pressure medications immediately once you feel better. Your body will naturally regulate blood pressure.",
+          "evidence_provided": "Abruptly stopping antihypertensive medications can cause rebound hypertension and serious cardiovascular events. Medication changes require medical supervision.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Medication Safety"
+    },
+    {
+      "id": 8,
+      "query": "Can antibiotics treat viral infections like the flu?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9993818998336792
+        ],
+        "similarity": [
+          0,
+          0.8395323753356934
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Antibiotics are ineffective against viral infections. Influenza is caused by a virus and requires antiviral medications (e.g., oseltamivir) or supportive care.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, antibiotics are effective against some types of infections including viral infections like influenza. Take antibiotics at the first sign of flu.",
+          "applied_rules": [
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Antibiotics are ineffective against viral infections. Influenza is caused by a virus and requires antiviral medications (e.g., oseltamivir) or supportive care.",
+          "recommendation": "Consult healthcare provider regarding: Can antibiotics treat viral infections like the flu?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, antibiotics are effective against all types of infections including viral infections like influenza. Take antibiotics at the first sign of flu.",
+          "evidence_provided": "Antibiotics are ineffective against viral infections. Influenza is caused by a virus and requires antiviral medications (e.g., oseltamivir) or supportive care.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Medication Misuse"
+    },
+    {
+      "id": 9,
+      "query": "What causes type 2 diabetes?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9991294741630554
+        ],
+        "similarity": [
+          0,
+          0.8210544586181641
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Type 2 diabetes is a complex multifactorial disease involving genetic predisposition, insulin resistance, obesity, sedentary lifestyle, and other factors\u2014not solely sugar consumption.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Type 2 diabetes is caused exclusively by eating too much sugar. If you avoid sugar completely, you can typicsomey not recommended develop diabetes.",
+          "applied_rules": [
+            "Replaced 'never' with 'typically not recommended'",
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Type 2 diabetes is a complex multifactorial disease involving genetic predisposition, insulin resistance, obesity, sedentary lifestyle, and other factors\u2014not solely sugar consumption.",
+          "recommendation": "Consult healthcare provider regarding: What causes type 2 diabetes?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Type 2 diabetes is caused exclusively by eating too much sugar. If you avoid sugar completely, you can never develop diabetes.",
+          "evidence_provided": "Type 2 diabetes is a complex multifactorial disease involving genetic predisposition, insulin resistance, obesity, sedentary lifestyle, and other factors\u2014not solely sugar consumption.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "HIGH"
+        }
+      },
+      "category": "Etiology"
+    },
+    {
+      "id": 10,
+      "query": "Should I get vaccinated during pregnancy?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9997386336326599
+        ],
+        "similarity": [
+          0,
+          0.8063489198684692
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Several vaccines are safe and recommended during pregnancy (e.g., Tdap, influenza). Some vaccines are contraindicated, but blanket avoidance is incorrect and dangerous.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "No, some vaccines are extremely dangerous during pregnancy and will may cause severe birth defects. Pregnant women should typicsomey not recommended receive any vaccinations.",
+          "applied_rules": [
+            "Replaced 'definitely' with 'may'",
+            "Replaced 'never' with 'typically not recommended'",
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Several vaccines are safe and recommended during pregnancy (e.g., Tdap, influenza). Some vaccines are contraindicated, but blanket avoidance is incorrect and dangerous.",
+          "recommendation": "Consult healthcare provider regarding: Should I get vaccinated during pregnancy?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "No, all vaccines are extremely dangerous during pregnancy and will definitely cause severe birth defects. Pregnant women should never receive any vaccinations.",
+          "evidence_provided": "Several vaccines are safe and recommended during pregnancy (e.g., Tdap, influenza). Some vaccines are contraindicated, but blanket avoidance is incorrect and dangerous.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "HIGH"
+        }
+      },
+      "category": "Vaccination"
+    },
+    {
+      "id": 11,
+      "query": "How much water should I drink daily?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9998633861541748
+        ],
+        "similarity": [
+          0,
+          0.7660718560218811
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Fluid requirements vary based on individual factors (body weight, activity, climate, health status). The '8 glasses' rule is a myth; adequate intake varies (typically 2-3 liters for adults).",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Everyone must drink exactly 8 glasses (64 ounces) of water per day regardless of body size, activity level, or climate. This is a universal medical requirement.",
+          "applied_rules": [],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Fluid requirements vary based on individual factors (body weight, activity, climate, health status). The '8 glasses' rule is a myth; adequate intake varies (typically 2-3 liters for adults).",
+          "recommendation": "Consult healthcare provider regarding: How much water should I drink daily?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Everyone must drink exactly 8 glasses (64 ounces) of water per day regardless of body size, activity level, or climate. This is a universal medical requirement.",
+          "evidence_provided": "Fluid requirements vary based on individual factors (body weight, activity, climate, health status). The '8 glasses' rule is a myth; adequate intake varies (typically 2-3 liters for adults).",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Nutrition"
+    },
+    {
+      "id": 12,
+      "query": "Can MRI scans cause cancer?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9984645843505859
+        ],
+        "similarity": [
+          0,
+          0.8327994346618652
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: MRI uses magnetic fields and radio waves\u2014no ionizing radiation. MRI does not cause cancer. CT scans use X-rays (ionizing radiation) and carry minimal radiation risk.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, MRI scans emit dangerous radiation that causes cancer. They are more harmful than CT scans and should be avoided at some costs.",
+          "applied_rules": [
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "MRI uses magnetic fields and radio waves\u2014no ionizing radiation. MRI does not cause cancer. CT scans use X-rays (ionizing radiation) and carry minimal radiation risk.",
+          "recommendation": "Consult healthcare provider regarding: Can MRI scans cause cancer?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, MRI scans emit dangerous radiation that causes cancer. They are more harmful than CT scans and should be avoided at all costs.",
+          "evidence_provided": "MRI uses magnetic fields and radio waves\u2014no ionizing radiation. MRI does not cause cancer. CT scans use X-rays (ionizing radiation) and carry minimal radiation risk.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Diagnostic Imaging"
+    },
+    {
+      "id": 14,
+      "query": "Is depression just feeling sad?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9998133778572083
+        ],
+        "similarity": [
+          0,
+          0.7467529773712158
+        ],
+        "domain": [
+          0,
+          NaN
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Depression is a serious mental health disorder involving persistent sadness, loss of interest, neurobiological changes, and requires professional treatment (therapy, medication).",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, depression is simply feeling sad. Anyone can treatment options include it by just deciding to be happy and thinking positive thoughts. It's a choice, not a medical condition.",
+          "applied_rules": [
+            "Replaced 'cure' with 'treatment options include'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Depression is a serious mental health disorder involving persistent sadness, loss of interest, neurobiological changes, and requires professional treatment (therapy, medication).",
+          "recommendation": "Consult healthcare provider regarding: Is depression just feeling sad?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, depression is simply feeling sad. Anyone can cure it by just deciding to be happy and thinking positive thoughts. It's a choice, not a medical condition.",
+          "evidence_provided": "Depression is a serious mental health disorder involving persistent sadness, loss of interest, neurobiological changes, and requires professional treatment (therapy, medication).",
+          "action_required": "Medical expert review needed",
+          "risk_level": "HIGH"
+        }
+      },
+      "category": "Mental Health"
+    }
+  ]
+}
