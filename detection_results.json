@@ -1,17 +1,17 @@
 {
   "metrics": {
-    "accuracy": 0.6666666666666666,
+    "accuracy": 0.7,
     "precision": 1.0,
-    "recall": 0.375,
-    "f1_score": 0.5454545454545454,
+    "recall": 0.34782608695652173,
+    "f1_score": 0.5161290322580645,
     "confusion_matrix": [
       [
-        7,
+        27,
         0
       ],
       [
-        5,
-        3
+        15,
+        8
       ]
     ]
   },
@@ -567,6 +567,1227 @@
       },
       "correction": null,
       "category": "Mental Health"
+    },
+    {
+      "id": 16,
+      "query": "What is the function of the kidneys?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.8285530805587769
+        ],
+        "similarity": [
+          0,
+          0.8274329900741577
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Physiology"
+    },
+    {
+      "id": 17,
+      "query": "How does insulin work in the body?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.9662210941314697
+        ],
+        "similarity": [
+          0,
+          0.758703351020813
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Physiology"
+    },
+    {
+      "id": 18,
+      "query": "What are the symptoms of a heart attack?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.880897581577301
+        ],
+        "similarity": [
+          0,
+          0.6919119954109192
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 19,
+      "query": "What is the difference between Type 1 and Type 2 diabetes?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.8861462473869324
+        ],
+        "similarity": [
+          0,
+          0.8648725748062134
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 20,
+      "query": "How is asthma managed?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.5759947896003723
+        ],
+        "similarity": [
+          0,
+          0.838004469871521
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Treatment"
+    },
+    {
+      "id": 21,
+      "query": "What is a healthy BMI range?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.8929898142814636
+        ],
+        "similarity": [
+          0,
+          0.8211042881011963
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Health Assessment"
+    },
+    {
+      "id": 22,
+      "query": "What causes anemia?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9232859015464783
+        ],
+        "similarity": [
+          0,
+          0.8292630910873413
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 23,
+      "query": "How do statins work?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.9904415607452393
+        ],
+        "similarity": [
+          0,
+          0.9657220840454102
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Pharmacology"
+    },
+    {
+      "id": 24,
+      "query": "What is the purpose of a Pap smear?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.9946585297584534
+        ],
+        "similarity": [
+          0,
+          0.8794364929199219
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Screening"
+    },
+    {
+      "id": 25,
+      "query": "How is pneumonia diagnosed?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.81710284948349
+        ],
+        "similarity": [
+          0,
+          0.9084016680717468
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 26,
+      "query": "What are the risk factors for stroke?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.9926633834838867
+        ],
+        "similarity": [
+          0,
+          0.805167019367218
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Risk Factors"
+    },
+    {
+      "id": 27,
+      "query": "What is the purpose of physical therapy?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.6355252861976624
+        ],
+        "similarity": [
+          0,
+          0.8938461542129517
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Rehabilitation"
+    },
+    {
+      "id": 28,
+      "query": "How is HIV transmitted?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9565770626068115
+        ],
+        "similarity": [
+          0,
+          0.876524806022644
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Transmission"
+    },
+    {
+      "id": 29,
+      "query": "What is osteoporosis?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9996054768562317
+        ],
+        "similarity": [
+          0,
+          0.847959041595459
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 30,
+      "query": "What is the role of white blood cells?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.6238491535186768
+        ],
+        "similarity": [
+          0,
+          0.6672585606575012
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Physiology"
+    },
+    {
+      "id": 31,
+      "query": "Can essential oils cure cancer?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9992184638977051
+        ],
+        "similarity": [
+          0,
+          0.8498826026916504
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          1,
+          0.3333333333333333
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: There is no scientific evidence that essential oils cure cancer. While some may provide symptomatic relief, they are not cancer treatments.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, essential oils like frankincense and lavender have been proven to treatment options include some types of cancer. They work better than chemotherapy with no side effects.",
+          "applied_rules": [
+            "Replaced 'cure' with 'treatment options include'",
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "There is no scientific evidence that essential oils cure cancer. While some may provide symptomatic relief, they are not cancer treatments.",
+          "recommendation": "Consult healthcare provider regarding: Can essential oils cure cancer?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, essential oils like frankincense and lavender have been proven to cure all types of cancer. They work better than chemotherapy with no side effects.",
+          "evidence_provided": "There is no scientific evidence that essential oils cure cancer. While some may provide symptomatic relief, they are not cancer treatments.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "HIGH"
+        }
+      },
+      "category": "Alternative Medicine"
+    },
+    {
+      "id": 32,
+      "query": "Is it safe to take double the prescribed dose to work faster?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9991897940635681
+        ],
+        "similarity": [
+          0,
+          0.6607810854911804
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          1,
+          0.3333333333333333
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Taking more than prescribed medication is dangerous and can cause overdose, toxicity, and serious adverse effects. Never exceed prescribed doses.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, doubling medication doses is completely safe and will help you recover twice as fast. Doctors are just being overly cautious with dosing.",
+          "applied_rules": [],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Taking more than prescribed medication is dangerous and can cause overdose, toxicity, and serious adverse effects. Never exceed prescribed doses.",
+          "recommendation": "Consult healthcare provider regarding: Is it safe to take double the prescribed dose to work faster?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, doubling medication doses is completely safe and will help you recover twice as fast. Doctors are just being overly cautious with dosing.",
+          "evidence_provided": "Taking more than prescribed medication is dangerous and can cause overdose, toxicity, and serious adverse effects. Never exceed prescribed doses.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Medication Safety"
+    },
+    {
+      "id": 33,
+      "query": "Can you get the flu from the flu vaccine?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.999496579170227
+        ],
+        "similarity": [
+          0,
+          0.7456585168838501
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Vaccination"
+    },
+    {
+      "id": 34,
+      "query": "What is the maximum safe dose of paracetamol?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.44999999999999996,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9880279302597046
+        ],
+        "similarity": [
+          0,
+          0.8659762144088745
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          1,
+          0.5
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Maximum safe paracetamol dose is 4000mg/24 hours for adults. Exceeding this can cause severe liver damage and acute liver failure.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Adults can safely take up to 8000mg of paracetamol per day. The 4000mg limit is just a recommendation, not a safety concern.",
+          "applied_rules": [],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Maximum safe paracetamol dose is 4000mg/24 hours for adults. Exceeding this can cause severe liver damage and acute liver failure.",
+          "recommendation": "Consult healthcare provider regarding: What is the maximum safe dose of paracetamol?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Adults can safely take up to 8000mg of paracetamol per day. The 4000mg limit is just a recommendation, not a safety concern.",
+          "evidence_provided": "Maximum safe paracetamol dose is 4000mg/24 hours for adults. Exceeding this can cause severe liver damage and acute liver failure.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Medication Safety"
+    },
+    {
+      "id": 35,
+      "query": "Can autism be caused by vaccines?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9998149275779724
+        ],
+        "similarity": [
+          0,
+          0.6934866309165955
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Vaccination"
+    },
+    {
+      "id": 36,
+      "query": "Is it safe to stop taking antibiotics when you feel better?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9998082518577576
+        ],
+        "similarity": [
+          0,
+          0.8006304502487183
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Medication Adherence"
+    },
+    {
+      "id": 37,
+      "query": "Can diabetes be cured permanently?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9968835711479187
+        ],
+        "similarity": [
+          0,
+          0.7227696180343628
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Treatment"
+    },
+    {
+      "id": 38,
+      "query": "Are all bacteria harmful?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9914563298225403
+        ],
+        "similarity": [
+          0,
+          0.6591896414756775
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Microbiology"
+    },
+    {
+      "id": 39,
+      "query": "Can you overdose on vitamins?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9998151659965515
+        ],
+        "similarity": [
+          0,
+          0.5540170669555664
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Nutrition"
+    },
+    {
+      "id": 40,
+      "query": "Is schizophrenia the same as multiple personality disorder?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.995012104511261
+        ],
+        "similarity": [
+          0,
+          0.6834135055541992
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Mental Health"
+    },
+    {
+      "id": 41,
+      "query": "Can you become immune to antibiotics?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.611663818359375
+        ],
+        "similarity": [
+          0,
+          0.536348283290863
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          1,
+          0.3333333333333333
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: Bacteria become resistant to antibiotics, not people. Antibiotic resistance is about bacterial evolution, not human immunity.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, if you take antibiotics too often, your body becomes permanently immune to them and they'll typicsomey not recommended work again for any infection.",
+          "applied_rules": [
+            "Replaced 'never' with 'typically not recommended'",
+            "Replaced 'all' with 'some'"
+          ],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "Bacteria become resistant to antibiotics, not people. Antibiotic resistance is about bacterial evolution, not human immunity.",
+          "recommendation": "Consult healthcare provider regarding: Can you become immune to antibiotics?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, if you take antibiotics too often, your body becomes permanently immune to them and they'll never work again for any infection.",
+          "evidence_provided": "Bacteria become resistant to antibiotics, not people. Antibiotic resistance is about bacterial evolution, not human immunity.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "HIGH"
+        }
+      },
+      "category": "Pharmacology"
+    },
+    {
+      "id": 42,
+      "query": "Is ADHD caused by too much sugar and bad parenting?",
+      "prediction": 1,
+      "actual": 1,
+      "confidence": 0.5,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9991063475608826
+        ],
+        "similarity": [
+          0,
+          0.8693222999572754
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          1,
+          0.3333333333333333
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": {
+        "rag": {
+          "method": "RAG",
+          "corrected_output": "Based on medical evidence: ADHD is a neurodevelopmental disorder with genetic and neurobiological basis. Sugar and parenting do not cause ADHD.",
+          "explanation": "Response grounded in verified medical literature"
+        },
+        "rule": {
+          "method": "Rule-Based",
+          "corrected_output": "Yes, ADHD is absolutely caused by children eating too much sugar and having undisciplined parents. It's not a real medical condition.",
+          "applied_rules": [],
+          "explanation": "Applied medical safety rules to reduce absolute claims"
+        },
+        "explanation": {
+          "method": "Explanation Feedback",
+          "issue": "The output contradicts established medical evidence",
+          "correct_information": "ADHD is a neurodevelopmental disorder with genetic and neurobiological basis. Sugar and parenting do not cause ADHD.",
+          "recommendation": "Consult healthcare provider regarding: Is ADHD caused by too much sugar and bad parenting?",
+          "warning": "\u26a0\ufe0f This response contains medical misinformation"
+        },
+        "human_loop": {
+          "method": "Human-in-Loop",
+          "flagged_output": "Yes, ADHD is absolutely caused by children eating too much sugar and having undisciplined parents. It's not a real medical condition.",
+          "evidence_provided": "ADHD is a neurodevelopmental disorder with genetic and neurobiological basis. Sugar and parenting do not cause ADHD.",
+          "action_required": "Medical expert review needed",
+          "risk_level": "MEDIUM"
+        }
+      },
+      "category": "Mental Health"
+    },
+    {
+      "id": 43,
+      "query": "Can detox teas cleanse your liver and kidneys?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.997787356376648
+        ],
+        "similarity": [
+          0,
+          0.8013159036636353
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Alternative Medicine"
+    },
+    {
+      "id": 44,
+      "query": "Should pregnant women avoid all fish?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9968079924583435
+        ],
+        "similarity": [
+          0,
+          0.753217339515686
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Pregnancy"
+    },
+    {
+      "id": 45,
+      "query": "Can you get AIDS from mosquito bites?",
+      "prediction": 0,
+      "actual": 1,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.9982183575630188
+        ],
+        "similarity": [
+          0,
+          0.8280996084213257
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Transmission"
+    },
+    {
+      "id": 46,
+      "query": "What is the purpose of platelets?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 0.7,
+      "method_scores": {
+        "entailment": [
+          1,
+          0.6294655799865723
+        ],
+        "similarity": [
+          0,
+          0.820828914642334
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Physiology"
+    },
+    {
+      "id": 47,
+      "query": "What is hypertension?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.6173718571662903
+        ],
+        "similarity": [
+          0,
+          0.8338024616241455
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Diagnosis"
+    },
+    {
+      "id": 48,
+      "query": "How does CPR work?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.9876167178153992
+        ],
+        "similarity": [
+          0,
+          0.8796746730804443
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Emergency Medicine"
+    },
+    {
+      "id": 49,
+      "query": "What is the appendix?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.7917025685310364
+        ],
+        "similarity": [
+          0,
+          0.8705567121505737
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Anatomy"
+    },
+    {
+      "id": 50,
+      "query": "What is the difference between a virus and bacteria?",
+      "prediction": 0,
+      "actual": 0,
+      "confidence": 1,
+      "method_scores": {
+        "entailment": [
+          0,
+          0.6763797402381897
+        ],
+        "similarity": [
+          0,
+          0.8183959126472473
+        ],
+        "domain": [
+          0,
+          NaN
+        ],
+        "uncertainty": [
+          0,
+          0.0
+        ],
+        "medical_rules": [
+          0,
+          0.0
+        ]
+      },
+      "correction": null,
+      "category": "Microbiology"
     }
   ]
 }

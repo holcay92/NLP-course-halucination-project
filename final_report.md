@@ -13,7 +13,7 @@ This project implements a comprehensive system for detecting and correcting hall
 **Key Achievements**:
 
 - Developed multi-method detection system with **5 complementary approaches**
-- Created labeled dataset of **15 medical cases** (7 factual, 8 hallucinated)
+- Created labeled dataset of **50 medical cases** (27 factual, 23 hallucinated)
 - Implemented **4 distinct correction strategies**
 - Achieved comprehensive evaluation with standard ML metrics
 - Identified domain-specific challenges and ethical considerations

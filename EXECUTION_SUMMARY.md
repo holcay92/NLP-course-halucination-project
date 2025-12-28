@@ -27,21 +27,21 @@ python3 analyze_results.py
 - Query refinement
 - Uncertainty acknowledgment
 
-## Current Performance (15 medical cases)
+## Current Performance (50 medical cases)
 
 | Metric    | Score                     |
 | --------- | ------------------------- |
-| Accuracy  | 66.7%                     |
+| Accuracy  | 70.0%                     |
 | Precision | 100% (No false positives) |
-| Recall    | 37.5%                     |
-| F1-Score  | 54.5%                     |
+| Recall    | 34.8%                     |
+| F1-Score  | 51.6%                     |
 
 ## Results
 
-- **True Positives**: 3 (hallucinations correctly detected)
-- **True Negatives**: 7 (factual cases correctly identified)
+- **True Positives**: 8 (hallucinations correctly detected)
+- **True Negatives**: 27 (factual cases correctly identified)
 - **False Positives**: 0 (perfect precision)
-- **False Negatives**: 5 (missed hallucinations)
+- **False Negatives**: 15 (missed hallucinations)
 
 ## Key Insights
 
@@ -54,21 +54,31 @@ python3 analyze_results.py
 
 ⚠️ **Areas for Improvement**:
 
-- Recall could be higher (missed 5/8 hallucinations)
-- Need more aggressive detection thresholds
+- Recall could be higher (missed 15/23 hallucinations = 65%)
+- Need more aggressive detection thresholds or lower ensemble threshold
 - Expand rule base for broader coverage
-- Consider adjusting ensemble weights
+- Consider adjusting ensemble weights to favor recall
 
 ## Successful Detections
 
 1. **Antibiotics for viruses** - Flagged by Medical Rules
 2. **Type 2 diabetes overconfidence** - Flagged by Uncertainty + NLI
 3. **Vaccination absolute claims** - Flagged by Uncertainty + NLI
+4. **Essential oils cure cancer** - Flagged by Uncertainty + NLI
+5. **Double medication dosing** - Flagged by Uncertainty + NLI
+6. **Paracetamol overdose** - Flagged by Medical Rules
+7. **Antibiotic immunity myth** - Flagged by NLI
+8. **ADHD sugar causation** - Flagged by Uncertainty + NLI
 
-## Challenging Cases (Missed)
+## Challenging Cases (Missed - 15 total)
 
-1. **Vitamin C cancer cure** - Complex medical misinformation
-2. **Stopping blood pressure meds** - Subtle dangerous advice
+**Patterns identified**:
+
+1. **Subtle misinformation** (Vitamin C cancer cure, diabetes "cure")
+2. **Misconceptions without absolute language** (8 glasses of water, depression myths)
+3. **Technical misinformation** (MRI radiation, bacteria myths, HIV transmission)
+4. **Vaccine misinformation** (Flu vaccine, autism link)
+5. **Alternative medicine** (Detox teas, pregnancy nutrition myths)
 
 ## Output Files
 
@@ -87,28 +97,30 @@ Decision threshold: ≥ 0.4 → Classify as hallucination
 
 ## Dataset Distribution
 
-| Category      | Count  |
-| ------------- | ------ |
-| Treatment     | 3      |
-| Diagnosis     | 3      |
-| Transmission  | 3      |
-| Physiology    | 3      |
-| Mental Health | 3      |
-| **Total**     | **15** |
+| Category          | Count  | Category      | Count |
+| ----------------- | ------ | ------------- | ----- |
+| Diagnosis         | 8      | Physiology    | 4     |
+| Treatment         | 5      | Transmission  | 3     |
+| Medication Safety | 3      | Vaccination   | 3     |
+| Mental Health     | 3      | Nutrition     | 2     |
+| Pharmacology      | 2      | Alt. Medicine | 2     |
+| Microbiology      | 2      | Others        | 13    |
+| **Total**         | **50** |               |       |
 
 **Labels**:
 
-- Factual: 7 cases
-- Hallucinated: 8 cases
+- Factual: 27 cases (54%)
+- Hallucinated: 23 cases (46%)
 
 ## Next Steps
 
 1. ✅ Review `detection_results.json` for detailed analysis
 2. ✅ Check `evaluation_report.txt` for metrics
 3. ✅ Read `final_report.md` for comprehensive documentation
-4. 🔄 Consider threshold tuning for better recall
-5. 🔄 Expand dataset for more robust evaluation
-6. 🔄 Add more medical safety rules
+4. 🔄 **Priority**: Improve recall (currently 34.8%) - consider lower ensemble threshold
+5. 🔄 Add more medical safety rules for common misconceptions
+6. 🔄 Integrate medical knowledge base (e.g., PubMed, UpToDate)
+7. 🔄 Fine-tune weights to balance precision vs recall tradeoff
 
 ## Medical Safety Note
 
@@ -133,4 +145,4 @@ See `README.md` for installation, usage, and detailed documentation.
 ---
 
 **Last Run**: December 28, 2025  
-**Version**: 2.0 (Enhanced with 5 detection methods)
+**Version**: 2.1 (Expanded to 50 cases across 24 medical categories)

@@ -7,7 +7,7 @@ A comprehensive system for detecting and correcting hallucinations in Large Lang
 Large Language Models can generate plausible-sounding but factually incorrect information (hallucinations), which is particularly dangerous in healthcare contexts. This project addresses this critical challenge through:
 
 - **Multi-method Detection**: 5 complementary approaches for robust hallucination identification
-- **Medical Dataset**: 15 labeled healthcare cases (8 factual, 7 hallucinated)
+- **Medical Dataset**: 50 labeled healthcare cases (27 factual, 23 hallucinated)
 - **Correction Strategies**: 4 distinct methods for fixing detected hallucinations
 - **Comprehensive Evaluation**: Standard ML metrics and domain-specific analysis
 
@@ -160,15 +160,18 @@ project_halucination/
 
 ## 📊 Dataset
 
-The medical dataset includes 15 carefully curated cases across 5 categories:
+The medical dataset includes 50 carefully curated cases across 24 diverse medical categories:
 
-| Category              | Description                                 | Cases |
-| --------------------- | ------------------------------------------- | ----- |
-| **Diagnosis**         | Disease identification and symptom analysis | 3     |
-| **Treatment**         | Medication and therapy recommendations      | 3     |
-| **Contraindications** | Drug interactions and warnings              | 3     |
-| **Dosage**            | Medication dosing instructions              | 3     |
-| **General Medical**   | General health information                  | 3     |
+| Category              | Cases | Category                 | Cases |
+| --------------------- | ----- | ------------------------ | ----- |
+| **Diagnosis**         | 8     | **Physiology**           | 4     |
+| **Treatment**         | 5     | **Transmission**         | 3     |
+| **Medication Safety** | 3     | **Vaccination**          | 3     |
+| **Mental Health**     | 3     | **Nutrition**            | 2     |
+| **Pharmacology**      | 2     | **Alternative Medicine** | 2     |
+| **Microbiology**      | 2     | **Others**               | 13    |
+
+**Total**: 50 cases (27 factual, 23 hallucinated)
 
 Each case includes:
 
@@ -180,27 +183,36 @@ Each case includes:
 
 ## 📈 Performance Metrics
 
-The system achieves the following performance on the medical dataset:
+The system achieves the following performance on the 50-case medical dataset:
 
-- **Accuracy**: ~87% (13/15 correct classifications)
-- **Precision**: High confidence in positive detections
-- **Recall**: Successfully identifies most hallucinations
-- **F1-Score**: Balanced performance metric
+- **Accuracy**: 70.0% (35/50 correct classifications)
+- **Precision**: 100% (Perfect - no false positives)
+- **Recall**: 34.8% (8/23 hallucinations detected)
+- **F1-Score**: 51.6% (Balanced metric)
+
+**Key Insight**: Perfect precision means when the system flags content as hallucinated, it's always correct—critical for maintaining trust in healthcare applications.
 
 _Note: Results may vary based on model versions and dataset updates_
 
 ## 🔬 Detection Methods Comparison
 
-| Method                       | Accuracy | Strengths                       | Limitations              |
-| ---------------------------- | -------- | ------------------------------- | ------------------------ |
-| **NLI Entailment**           | ~80%     | Strong logical reasoning        | May miss subtle errors   |
-| **Semantic Similarity**      | ~73%     | Good for off-topic detection    | Can miss factual errors  |
-| **Domain Classifier**        | ~67%     | Medical terminology aware       | Requires domain training |
-| **Uncertainty Detection**    | ~60%     | Catches overconfident language  | False positives possible |
-| **Medical Rules**            | ~85%     | High precision on known risks   | Limited to coded rules   |
-| **Ensemble (All 5 methods)** | **~90%** | Robust, complementary strengths | Higher computation       |
+| Method                       | Individual Accuracy | Strengths                       | Limitations              |
+| ---------------------------- | ------------------- | ------------------------------- | ------------------------ |
+| **NLI Entailment**           | 82.0%               | Strong logical reasoning        | May miss subtle errors   |
+| **Semantic Similarity**      | 54.0%               | Good for off-topic detection    | Can miss factual errors  |
+| **Domain Classifier**        | 54.0%               | Medical terminology aware       | Requires domain training |
+| **Uncertainty Detection**    | ~60%                | Catches overconfident language  | False positives possible |
+| **Medical Rules**            | High precision      | High precision on known risks   | Limited to coded rules   |
+| **Ensemble (All 5 methods)** | **70.0%**           | Robust, complementary strengths | Higher computation       |
 
-_Note: Enhanced from 3 to 5 methods. Uncertainty and rule-based methods integrated from alternative implementation._
+**Performance Breakdown**:
+
+- ✅ True Positives: 8 (hallucinations correctly detected)
+- ✅ True Negatives: 27 (all factual cases correctly identified)
+- ✅ False Positives: 0 (perfect precision)
+- ⚠️ False Negatives: 15 (missed hallucinations - area for improvement)
+
+_Note: Enhanced from 3 to 5 methods. Tested on 50 diverse medical cases._
 
 ## ⚠️ Important Considerations
 
